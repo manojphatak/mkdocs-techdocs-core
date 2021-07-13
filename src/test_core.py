@@ -3,6 +3,9 @@ import mkdocs.config as config
 import mkdocs.plugins as plugins
 from .core import TechDocsCore
 
+from mkdocs.contrib.search import SearchPlugin
+from mkdocs_monorepo_plugin.plugin import MonorepoPlugin
+from mermaid2.plugin import MarkdownMermaidPlugin
 
 class DummyTechDocsCorePlugin(plugins.BasePlugin):
     pass
@@ -39,3 +42,14 @@ class TestTechDocsCoreConfig(unittest.TestCase):
         self.assertTrue("toc" in final_config["mdx_configs"])
         self.assertTrue("permalink" in final_config["mdx_configs"]["toc"])
         self.assertFalse(final_config["mdx_configs"]["toc"]["permalink"])
+
+def test_sandbox():
+    print("inside sandbox test!")
+    search_plugin = SearchPlugin()
+    search_plugin.load_config({})
+
+    monorepo_plugin = MonorepoPlugin()
+    monorepo_plugin.load_config({})
+
+    mermaid_plugin = MarkdownMermaidPlugin()
+    mermaid_plugin.load_config({})
