@@ -104,7 +104,7 @@ class TechDocsCore(BasePlugin):
         config["markdown_extensions"].append("pymdownx.tilde")
 
         config["markdown_extensions"].append("markdown_inline_graphviz")
-        config["markdown_extensions"].append("plantuml_markdown")
+        # config["markdown_extensions"].append("plantuml_markdown")
 
         # merge config supplied by user in the mkdocs.yml
         for key in mdx_configs_override:
